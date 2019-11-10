@@ -28,7 +28,7 @@
                 <input class="input" type="number" min="1" max="8" placeholder="Semester" v-model.number="semester">
                 <input class="input" type="number" min="0" max="100" placeholder="Grade" v-model.number="grade">
                 <button class="green-button" id="save-course" @click="addCourse(title, semester, grade)">Save</button>
-                <button class="grey-button" id="cancel-course">Cancel</button>
+                <button class="grey-button" type="reset" @click="resetForm" id="cancel-course">Cancel</button>
             </span>
         </div>
     </div>
@@ -60,6 +60,14 @@
                 this.semester = '';
                 this.grade = '';
                 this.showForm = false;
+            },
+            resetForm: function (event) {
+                event.preventDefault()
+                this.title = '';
+                this.semester = '';
+                this.grade = '';
+                this.showForm = false;
+
             }
         }
     }
