@@ -1,7 +1,7 @@
 <template>
     <main id="app">
         <Header/>
-        <Container/>
+        <Container :activeTab="'profile'"/>
         <Footer/>
     </main>
 </template>

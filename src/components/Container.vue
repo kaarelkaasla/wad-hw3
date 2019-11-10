@@ -2,12 +2,12 @@
     <section id="container">
         <section id="main">
             <div class="content">
-                <Profile/>
-                <Courses/>
+                <Profile :class="{ active: activeTab === 'profile' }"/>
+                <Courses :class="{ active: activeTab === 'courses' }"/>
             </div>
             <div class="controls">
-                <button id="profile-button" class="pill active">Profile</button>
-                <button id="courses-button" class="pill">Courses</button>
+                <button id="profile-button" class="pill" v-bind:class='{ active: activeTab === "profile" }' @click="showTab('profile')">Profile</button>
+                <button id="courses-button" class="pill" v-bind:class='{ active:  activeTab === "courses"}' @click="showTab('courses')">Courses</button>
             </div>
         </section>
     </section>
@@ -18,7 +18,20 @@
     import Courses from "./Courses";
     export default {
         name: "Container",
-        components: {Courses, Profile}
+        components: {Courses, Profile},
+        data: () => {
+            return {
+
+            }
+        },
+        methods: {
+            showTab: function (tab) {
+                this.activeTab = tab;
+            }
+        },
+        props: {
+            activeTab: String
+        }
     }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-    <div id="profile-container" class="tab active">
+    <div id="profile-container" class="tab">
         <div id="profile">
             <div class="avatar">
                 <img src="../assets/me.png" id="picture" alt="My picture">
