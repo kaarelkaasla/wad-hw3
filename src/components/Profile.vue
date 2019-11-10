@@ -21,11 +21,11 @@
 
 <script>
     export default {
-        name: "Profile",
+        name: 'Profile',
         props: {
             user: Object
         }
-    }
+    };
 </script>
 
 <style scoped>

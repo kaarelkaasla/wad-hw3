@@ -35,13 +35,14 @@
 </template>
 
 <script>
-    import Course from "../models/Course";
+    import Course from '../models/Course';
+
     export default {
-        name: "Courses",
+        name: 'Courses',
         data: () => {
             return {
                 showForm: false
-            }
+            };
         },
         methods: {
             addCourse: function (title, semester, grade) {
@@ -60,7 +61,7 @@
         props: {
             courses: Array
         }
-    }
+    };
 </script>
 
 <style scoped>

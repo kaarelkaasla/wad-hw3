@@ -8,21 +8,22 @@
 
 <script>
 
-    import Header from "./components/Header";
-    import Container from "./components/Container";
-    import Footer from "./components/Footer";
+    import Header from './components/Header';
+    import Container from './components/Container';
+    import Footer from './components/Footer';
     import Course from './models/Course';
     import User from './models/User';
+
     export default {
-        name: "App",
+        name: 'App',
         data: function () {
             return {
-                user: new User("John", "Doe", "11/10/1990", "Software Engineering", "2.75"),
+                user: new User('John', 'Doe', '11/10/1990', 'Software Engineering', '2.75'),
                 courses: [
-                    new Course("Agile software development", 1, 82),
-                    new Course("System modeling", 1, 85),
-                    new Course("Object-oriented programming", 2, 99),
-                    new Course("Estonian language Level A2", 2, 65)
+                    new Course('Agile software development', 1, 82),
+                    new Course('System modeling', 1, 85),
+                    new Course('Object-oriented programming', 2, 99),
+                    new Course('Estonian language Level A2', 2, 65)
                 ]
             };
         },
@@ -34,11 +35,9 @@
             }
         },
         components: {
-            Container,
-            Footer,
-            Header
+            Container, Footer, Header
         }
-    }
+    };
 </script>
 
 <style>

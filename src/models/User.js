@@ -5,6 +5,5 @@ export default class User {
         this.birthdate = birthdate;
         this.faculty = faculty;
         this.gpa = gpa;
-        this.courses = [];
     }
 }
