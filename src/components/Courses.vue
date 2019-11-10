@@ -61,8 +61,7 @@
                 this.grade = '';
                 this.showForm = false;
             },
-            resetForm: function (event) {
-                event.preventDefault()
+            resetForm: function () {
                 this.title = '';
                 this.semester = '';
                 this.grade = '';
