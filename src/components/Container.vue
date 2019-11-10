@@ -21,16 +21,13 @@
         components: {Courses, Profile},
         data: () => {
             return {
-
+                activeTab: "profile"
             }
         },
         methods: {
             showTab: function (tab) {
                 this.activeTab = tab;
             }
-        },
-        props: {
-            activeTab: String
         }
     }
 </script>
