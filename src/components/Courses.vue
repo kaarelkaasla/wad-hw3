@@ -56,10 +56,7 @@
             addCourse: function (title, semester, grade) {
                 let course = new Course(title, semester, grade);
                 this.courses.push(course);
-                this.title = '';
-                this.semester = '';
-                this.grade = '';
-                this.showForm = false;
+                this.resetForm();
             },
             resetForm: function () {
                 this.title = '';
