@@ -20,13 +20,10 @@
 </template>
 
 <script>
-    import User from '../models/User';
     export default {
         name: "Profile",
         props: {
-            user: {
-                type: User
-            }
+            user: Object
         }
     }
 </script>

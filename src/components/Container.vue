@@ -2,32 +2,49 @@
     <section id="container">
         <section id="main">
             <div class="content">
-                <Profile :class="{ active: activeTab === 'profile' }"/>
-                <Courses :class="{ active: activeTab === 'courses' }"/>
+                <Profile :class="['tab', { 'active': isProfileTabActive() }]" :user="user"/>
+                <Courses :class="['tab', { 'active': isCoursesTabActive() }]" :courses="courses"/>
             </div>
             <div class="controls">
-                <button id="profile-button" class="pill" v-bind:class='{ active: activeTab === "profile" }' @click="showTab('profile')">Profile</button>
-                <button id="courses-button" class="pill" v-bind:class='{ active:  activeTab === "courses"}' @click="showTab('courses')">Courses</button>
+                <button id="profile-button" :class="['pill', { 'active': isProfileTabActive() }]"
+                        @click="activateProfileTab">Profile
+                </button>
+                <button id="courses-button" :class="['pill', { 'active': isCoursesTabActive() }]"
+                        @click="activateCoursesTab">Courses
+                </button>
             </div>
         </section>
     </section>
 </template>
 
 <script>
-    import Profile from "./Profile";
-    import Courses from "./Courses";
+    import Profile from "./Profile"
+    import Courses from "./Courses"
     export default {
-        name: "Container",
+        name: "Main",
         components: {Courses, Profile},
-        data: () => {
+        data: function () {
             return {
                 activeTab: "profile"
-            }
+            };
         },
         methods: {
-            showTab: function (tab) {
-                this.activeTab = tab;
+            activateCoursesTab: function () {
+                this.activeTab = "courses";
+            },
+            activateProfileTab: function () {
+                this.activeTab = "profile";
+            },
+            isCoursesTabActive: function () {
+                return this.activeTab === "courses";
+            },
+            isProfileTabActive: function () {
+                return this.activeTab === "profile";
             }
+        },
+        props: {
+            user: Object,
+            courses: Array
         }
     }
 </script>

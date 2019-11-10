@@ -40,16 +40,7 @@
         name: "Courses",
         data: () => {
             return {
-                courses: [
-                    new Course("Algorithms", 1, 80),
-                    new Course("Operating Systems", 2, 79),
-                    new Course("Artificial Intelligence", 3, 74),
-                    new Course("Computer Graphics", 3, 96)
-                ],
-                showForm: false,
-                title: "",
-                semester: "",
-                grade: ""
+                showForm: false
             }
         },
         methods: {
@@ -65,6 +56,9 @@
                 this.showForm = false;
 
             }
+        },
+        props: {
+            courses: Array
         }
     }
 </script>
