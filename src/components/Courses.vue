@@ -40,8 +40,8 @@
         <br>
         <br>
         <div>
-            <button id="add-course-button" class="blue-button">+</button>
-            <span id="add-course">
+            <button id="add-course-button" class="blue-button" @click="showForm = !showForm">+</button>
+            <span id="add-course" v-if="showForm">
                 <input class="input" type="text" placeholder="Course title" id="title">
                 <input class="input" type="number" min="1" max="8" placeholder="Semester" id="semester">
                 <input class="input" type="number" min="0" max="100" placeholder="Grade" id="grade">
@@ -54,7 +54,12 @@
 
 <script>
     export default {
-        name: "Courses"
+        name: "Courses",
+        data: () => {
+            return {
+                showForm: false
+            }
+        }
     }
 </script>
 
@@ -103,9 +108,5 @@
         border: 1px solid #cccccc;
         padding: 10px 20px;
         min-width: 135px;
-    }
-
-    #add-course {
-        display: none;
     }
 </style>
